@@ -1,6 +1,8 @@
 from math import cos, asin, sqrt
 from firebase import firebase
 from firebase.firebase import FirebaseApplication, FirebaseAuthentication
+from exceptions import *
+
 import json
 
 FIREBASE_SECRET = "VuvYwZlcU8S2zD8l4arSIp3CdWTo0Xb7BO5FcHSK"
@@ -29,6 +31,8 @@ def distance(lat1, lon1, lat2, lon2):
 
 def closest(v):
 	data,ids = get_location_list()
+	if len(ids) == 0:
+		raise NoMatchException()
 	minloc = min(data, key=lambda p: distance(v['lat'],v['lng'],p['lat'],p['lng']))
 	number = next(index for (index, d) in enumerate(data) if d["lat"] == minloc["lat"] and d["lng"]== minloc["lng"])
 	return [minloc,ids[number]]

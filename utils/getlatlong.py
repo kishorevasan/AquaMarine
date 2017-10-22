@@ -1,4 +1,5 @@
 import requests
+from exceptions import *
 
 
 def getlatlong(location):
@@ -9,4 +10,4 @@ def getlatlong(location):
         try:
         	return resp_json_payload['results'][0]['geometry']['location']
         except:
-                print "Error detecting lat-long"
+            raise NoPlaceException()
