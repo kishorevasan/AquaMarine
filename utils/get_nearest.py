@@ -35,4 +35,4 @@ def closest(v):
 	data,ids = get_location_list()
 	minloc = min(data, key=lambda p: distance(v['lat'],v['lng'],p['lat'],p['lng']))
         number = next(index for (index, d) in enumerate(data) if d["lat"] == minloc["lat"] and d["lng"]== minloc["lng"])
-        return [minloc,number]
+        return [minloc,ids[number]]
