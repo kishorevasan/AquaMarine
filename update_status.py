@@ -10,10 +10,10 @@ def update_receive(receive_flag, phone_num, lnglat):
 	result = fb.get('/users', None)
 	node_uid = get_node(result, phone_num)
 
-	if node_uid == None:
+	if node_uid == None and receive_flag == 1:
 		user = {"loc": lnglat, "notif": 1, "phone_num": phone_num}
 		fb.post("/users", user)
-	else:
+	elif node_uid != None:
 		result[node_uid]["notif"] = receive_flag
 		if lnglat != None:
 			result[node_uid]["loc"] = lnglat

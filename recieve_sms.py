@@ -24,7 +24,6 @@ def sms_reply():
 	# user match case
 	if "match me at" in message.lower():
 		location_phrase = " ".join(message.split(" ")[3:])
-		print location_phrase
 		try:
 			loc = getlatlong(location_phrase)
 			nearest,number = closest(loc)
@@ -32,6 +31,8 @@ def sms_reply():
 			resp.message("We found you a match, here is the google maps link: " + link)
 			sendmsg(number,"Your help is on the way from "+getlocname([loc["lat"],loc["lng"]]))
 			update_receive(0, number, None)
+			# create msging channel
+			create_connection(number, phone_num)
 		except NoMatchException:
 			resp.message("Thank you for your good will, but there is no one to help at the moment. Please check back later.")
 		except NoPlaceException:
@@ -46,8 +47,13 @@ def sms_reply():
 			resp.message("We will inform you once you get a match.")
 		except:
 			resp.message("Couldn't recognize location please try with a different location.")
+	
+	elif message.startswith("MSG"):
+		msg_phrase = " ".join(message.split(" ")[1:])
+		send_anon_msg(phone_num, msg_phrase);
 
 	elif "BYE" == message: 
+		remove_connection(phone_num)
 		update_receive(0, phone_num, None)
 		resp.message("Thank you for using Serve-it!")
 
