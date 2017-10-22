@@ -13,7 +13,6 @@ def get_iden(table, iden):
 	for uid in table:
 		 entry = table[uid]
 		 if entry["iden"] == iden:
-		 	#loc_string = str(entry["loc"].encode("utf-8"))
 		 	loc_list.append({"lat": entry["loc"]["lat"], "lng": entry["loc"]["lon"]})
                         ids.append(entry["phone_num"])
 

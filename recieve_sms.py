@@ -19,18 +19,25 @@ def sms_reply():
 	# user match case
 	if "match me at" in message.lower():
 		location_phrase = " ".join(message.split(" ")[3:])
-		loc = getlatlong(location_phrase)
-		nearest,number = closest(loc)
+		try:
+        		loc = getlatlong(location_phrase)
+        		nearest,number = closest(loc)
                 
-		link = getdirectionslink([loc["lat"], loc["lng"]], [nearest["lat"], nearest["lng"]])
-		resp.message("We found you a match, here is the google maps link: " + link)
-		sendmsg(number,"Your help is on the way from "+getloc([loc["lat"],loc["lng"]]))
+                        link = getdirectionslink([loc["lat"], loc["lng"]], [nearest["lat"], nearest["lng"]])
+                        resp.message("We found you a match, here is the google maps link: " + link)
+                        sendmsg(number,"Your help is on the way from "+getloc([loc["lat"],loc["lng"]]))
+                except:
+                        resp.message("Couldnt recognize location please try with a different Location")
+		
 
 	# match receive case
 	elif "receive at" in message.lower():
 		location_phrase = " ".join(message.split(" ")[2:])
-		loc = getlatlong(location_phrase)
-                resp.message("We will inform you once you get a match.")
+		try:
+        		loc = getlatlong(location_phrase)
+                        resp.message("We will inform you once you get a match.")
+                except:
+                        resp.message("Couldnt recognize location please try with a different Location")
         else:
                 resp.message("Type match me at <Location> to give help or receive at <Location> to get help")
 	return str(resp)
