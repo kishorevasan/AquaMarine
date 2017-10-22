@@ -19,8 +19,7 @@ def sms_reply():
 	phone_num = request.values.get('From', None)
 
 	resp = MessagingResponse()
-
-
+	
 	# user match case
 	if "match me at" in message.lower():
 		location_phrase = " ".join(message.split(" ")[3:])
