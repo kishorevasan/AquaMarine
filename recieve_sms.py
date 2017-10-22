@@ -58,7 +58,8 @@ def sms_reply():
 		resp.message("Thank you for using Serve-it!")
 
 	else:
-		resp.message("Type match me at <Location> to give help,  receive at <Location> to get help, or BYE to quit.")
+		help_msg = " Hi! If you have chariable donations to a nearby homeless person right now,	you can send \"Match me at <your location>\" to give help. If you are looking for help, send \"Revceive at <your location>\" to open notification alert when someone is ready to help you. If you are all done, send \"BYE\" to end chat and stop notifications and sharing your location."
+		resp.message(help_msg)
 
 	return str(resp)
 
