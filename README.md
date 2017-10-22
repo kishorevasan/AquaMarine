@@ -1,5 +1,5 @@
-# Bring Charitable Actions into Your Everyday Life: 
-### Introducing **Serve It**, a sustainable solution to a charitable ecosystem
+#### Bringing Charitable Actions into Your Everyday Life
+## Introducing **Serve It**, a sustainable solution to a charitable ecosystem
 
 ![Made with Heart](./assets/tree.jpg)
 
