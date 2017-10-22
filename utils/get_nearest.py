@@ -9,21 +9,21 @@ FIREBASE_URL = "https://aquamarine9k1.firebaseio.com/"
 def get_iden(table, iden):
 	assert iden == 0 or iden == 1
 	loc_list = []
+	ids = []
 	for uid in table:
 		 entry = table[uid]
 		 if entry["iden"] == iden:
 		 	#loc_string = str(entry["loc"].encode("utf-8"))
 		 	loc_list.append({"lat": entry["loc"]["lat"], "lng": entry["loc"]["lon"]})
+                        ids.append(entry["phone_num"])
 
-	#print type(loc_list[0])
-	return loc_list
+	return [loc_list,ids]
 
 
 def get_location_list():
 	fb = firebase.FirebaseApplication(FIREBASE_URL, authentication=None)
 	result = fb.get('/users', None)
-	loc_list = get_iden(result, 0)
-	return loc_list
+	return get_iden(result,0)
 
 
 def distance(lat1, lon1, lat2, lon2):
@@ -32,6 +32,7 @@ def distance(lat1, lon1, lat2, lon2):
     return 12742 * asin(sqrt(a))
 
 def closest(v):
-	data = get_location_list()
-	print v
-	return min(data, key=lambda p: distance(v['lat'],v['lng'],p['lat'],p['lng']))
+	data,ids = get_location_list()
+	minloc = min(data, key=lambda p: distance(v['lat'],v['lng'],p['lat'],p['lng']))
+        number = next(index for (index, d) in enumerate(data) if d["lat"] == minloc["lat"] and d["lng"]== minloc["lng"])
+        return [minloc,number]
