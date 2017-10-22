@@ -1,4 +1,4 @@
-## **Serve It** 
+# **Serve It** 
 ##### A Sustainable Solution to Charitable Ecosystem
 
 ![Made with Heart](./assets/tree.jpg)
