@@ -1,6 +1,6 @@
 #### Bringing Charitable Actions into Your Everyday Life
 <p align="center">
-  <img src="./assets/logo.png"/>
+  <img style="width: 100%" src="./assets/logo.png"/>
 </p>
 ## Introducing **Serve It**, a sustainable solution to a charitable ecosystem
 ### Why? 
