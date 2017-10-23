@@ -1,7 +1,5 @@
 #### Bringing Charitable Actions into Your Everyday Life
-<p align="center">
-  <img style="width: 100%" src="./assets/logo.png"/>
-</p>
+![Made with Heart](./assets/logo.png)
 ## Introducing **Serve It**, a sustainable solution to a charitable ecosystem
 ### Why? 
 There are lot of homeless people who starve because of poverty and on the other hand there are lot of food wasted by people after having food from the restaurant --- The disparity between the fortunate and the less fortunate inspired us to think about ways to challenge the status quo in our society and create sustainable solutions to bring charitable actions into our daily life as well as introduce gradual mutual understanding between the two groups. 
