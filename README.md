@@ -12,7 +12,13 @@ That's why we created **Serve it**.
 ### How?
 Text "Hi" to (510) 756 2698 to receive a help message, which will help navigate you to the right places.
 
-![Demo1](./assets/match.gif)
+### Demo
+If looking to donate...
+![Demo1](./assets/match.gif =375x667)
+
+If looking to receive donation...
+![Demo2](./assets/receive.gif =375x667)
+
 
 ### Contribution
 **Serve it** is created by [Kishore Vasan](https://github.com/kishorevasan), [Sai Ranganathan](https://github.com/sairanga123) and [Blarry Wang](https://github.com/bbbblarry). 
