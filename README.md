@@ -14,10 +14,10 @@ Text "Hi" to (510) 756 2698 to receive a help message, which will help navigate 
 
 ### Demo
 If looking to donate...
-![Demo1](./assets/match.gif =375x667)
+<img src="./assets/match.gif" height="667" width="375">
 
 If looking to receive donation...
-![Demo2](./assets/receive.gif =375x667)
+<img src="./assets/receive.gif" height="667" width="375">
 
 
 ### Contribution
