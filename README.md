@@ -12,11 +12,13 @@ That's why we created **Serve it**.
 ### How?
 Text "Hi" to (510) 756 2698 to receive a help message, which will help navigate you to the right places.
 
-### Demo
-If looking to donate...
+### Demos
+###If looking to donate...
+
 <img src="./assets/match.gif" height="667" width="375">
 
-If looking to receive donation...
+###If looking to receive donation...
+
 <img src="./assets/receive.gif" height="667" width="375">
 
 
